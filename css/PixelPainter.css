@@ -1,0 +1,14 @@
+.colorBtn {
+	height: 50px;
+	width: 50px;
+}
+
+.grid,
+.grid td {
+	border: 1px solid black;
+}
+
+.grid td {
+	height: 50px;
+	width: 50px;
+}
