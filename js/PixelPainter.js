@@ -51,6 +51,21 @@ function pixelpainter() {
       changer[i].className = '';
     }
   }
+  //Make OuterDiv Element
+  outerDiv = document.getElementById('gridDiv')
+
+  //Create Little Divs
+    var units = 20;
+
+  function  createLittleDivs() {
+      for (var i = 0; i < units; i++) {
+    var newDiv = document.createElement('div');
+        newDiv.className = 'pink';
+        newDiv.addEventListener('click', changeColor);
+        outerDiv.appendChild(newDiv)
+    }
+  }
+return createLittleDivs();
 
 }
 
