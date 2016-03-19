@@ -38,15 +38,6 @@ function pixelpainter() {
     }
   }
 
-
-
-
-
-
-return {
-
-
-};
 }
 
 var pixelpainter = pixelpainter();
