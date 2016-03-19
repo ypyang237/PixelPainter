@@ -15,6 +15,20 @@ function pixelpainter() {
      storecolor = 'green';
   });
 
+  document.getElementById('red').addEventListener('click', function(){
+     storecolor = 'red';
+  });
+  document.getElementById('yellow').addEventListener('click', function(){
+     storecolor = 'yellow';
+  });
+  document.getElementById('brown').addEventListener('click', function(){
+     storecolor = 'brown';
+  });
+  document.getElementById('black').addEventListener('click', function(){
+     storecolor = 'black';
+  });
+
+
   document.getElementById('eraseBtn').addEventListener('click', function(){
      storecolor = 'white';
   });

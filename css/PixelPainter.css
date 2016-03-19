@@ -1,29 +1,49 @@
 .colorBtn {
-	height: 50px;
-	width: 50px;
+  height: 50px;
+  width: 50px;
+  /*display:inline-table;*/
+}
+
+#paintColors {
+  display: inline-block;
+  width: 500px;
 }
 
 .grid,
 .grid td {
-	border: 1px solid black;
+  border: 1px solid black;
 }
 
 .grid td {
-	height: 50px;
-	width: 50px;
+  height: 50px;
+  width: 50px;
 }
 #pink {
-	background: #FF4DA2;
+  background: #FF4DA2;
 }
 #blue {
-	background: #79D5FF;
+  background: #79D5FF;
 }
 #purple {
-	background: #B74EE8;
+  background: #B74EE8;
 }
 #green {
-	background: #5BFF94;
+  background: #5BFF94;
 }
+
+#red {
+  background: #e62e00;
+}
+#yellow {
+  background: #ffff00;
+}
+#brown {
+  background: #663300;
+}
+#black {
+  background: #000000;
+}
+
 
 .pink {
   background: #FF4DA2;
@@ -40,4 +60,17 @@
 
 .white {
   background: #FFFFFF;
+}
+
+.red {
+  background: #e62e00;
+}
+.yellow {
+  background: #ffff00;
+}
+.brown {
+  background: #663300;
+}
+.black {
+  background: #000000;
 }
