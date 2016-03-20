@@ -9,12 +9,16 @@
   width: 500px;
 }
 
-#gridDiv {
-	height : 800px;
-	width : 1000px;
-	/*border: 1px solid black;*/
+.gridDivSmall {
+	height : 450px;
+	width : 450px;
 	display : inline-block;
-  
+}
+
+.gridDivLarge {
+  height : 850px;
+  width : 850px;
+  display : inline-block;
 }
 
 #pink {
@@ -44,8 +48,8 @@
 }
 
 .empty {
-  height : 30px;
-  width : 30px;
+  height : 25px;
+  width : 25px;
   border:  1px solid grey;
   display : inline-block;
 

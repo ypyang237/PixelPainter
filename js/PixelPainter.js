@@ -1,5 +1,30 @@
 function pixelpainter() {
 
+// Prompt
+  var units = 0;
+
+  function promptMachine() {
+
+  var unitsPrompt = prompt('Would you like a small or large canvas? Please enter small or large.');
+  unitsPrompt.toLowerCase();
+
+  if (unitsPrompt === 'small') {
+    document.getElementById('gridDiv').className = 'gridDivSmall';
+    units = 256;
+  }
+  else if (unitsPrompt === 'large') {
+   document.getElementById('gridDiv').className = 'gridDivLarge';
+   units = 806;
+  }
+  else {
+    alert('please enter either large or small.');
+  }
+}
+
+promptMachine();
+
+//pixelPainterRuns
+
   var colorArray = ['pink', 'blue', 'purple', 'green', 'red', 'yellow', 'brown', 'black', 'white'];
 
   var classToRemove = null;
@@ -43,7 +68,7 @@ function pixelpainter() {
   outerDiv = document.getElementById('gridDiv');
 
   //Create Little Divs
-    var units = document.getElementById('prompt').innerHTML;
+
 
   function  createLittleDivs() {
     for(var i = 0; i < units; i++) {
@@ -67,20 +92,14 @@ function pixelpainter() {
   function clearAll(event) {
     for(var i = 0; i < divsToClear.length; i++) {
       divsToClear[i].className = '';
-      divsToClear[i].className = 'empty white'
+      divsToClear[i].className = 'empty white';
     }
   }
 
 
 }
-var unitsPrompt = prompt('How many units?');
-Number(unitsPrompt);
 
-if (unitsPrompt > 806) {
-  document.getElementById('prompt').innerHTML = 806;
-}
-else {
-  document.getElementById('prompt').innerHTML = unitsPrompt;
-}
+
+
 
 var pixelpainter = pixelpainter();
