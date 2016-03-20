@@ -9,15 +9,13 @@
   width: 500px;
 }
 
-.grid,
-.grid td {
-  border: 1px solid black;
+#gridDiv {
+	height : 800px;
+	width : 800px;
+	border: 1px solid black;
+	display : inline-block;
 }
 
-.grid td {
-  height: 50px;
-  width: 50px;
-}
 #pink {
   background: #FF4DA2;
 }
@@ -44,7 +42,13 @@
   background: #000000;
 }
 
-
+.empty {
+  height : 50px;
+  width : 50px;
+  border: 1px solid black;
+  display : inline-block;
+	
+}
 .pink {
   background: #FF4DA2;
 }
@@ -57,11 +61,9 @@
 .green {
   background: #5BFF94;
 }
-
 .white {
   background: #FFFFFF;
 }
-
 .red {
   background: #e62e00;
 }
@@ -74,3 +76,4 @@
 .black {
   background: #000000;
 }
+
