@@ -25,7 +25,7 @@ promptMachine();
 
 //pixelPainterRuns
 
-  var colorArray = ['pink', 'blue', 'purple', 'green', 'red', 'yellow', 'brown', 'black', 'white'];
+  var colorArray = ['heart', 'pink', 'blue', 'purple', 'green', 'red', 'yellow', 'brown', 'black', 'white'];
 
   var classToRemove = null;
 
@@ -53,8 +53,8 @@ promptMachine();
   document.getElementById('brown').addEventListener('click', function(){
      storecolor = 'brown';
   });
-  document.getElementById('black').addEventListener('click', function(){
-     storecolor = 'black';
+  document.getElementById('heart').addEventListener('click', function(){
+     storecolor = 'heart';
   });
 
 
