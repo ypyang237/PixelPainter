@@ -1,12 +1,15 @@
 body {
-  background: url('fantasia.jpg') no-repeat center center fixed;
+  background: url('http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-h1 {text-align: center}
+h1 {
+  text-align: center
+
+}
 
 
 #pixelPainter {
@@ -22,7 +25,7 @@ h1 {text-align: center}
 .colorBtn {
   height: 50px;
   width: 50px;
-  /*display:inline-table;*/
+  display:inline-block;
 }
 
 #paintColors {
@@ -77,6 +80,21 @@ h1 {text-align: center}
   margin-bottom: 5px;
 }
 
+#star {
+  height: 45px;
+  width: 45px;
+  border: 2px solid gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#circle {
+  height: 45px;
+  width: 45px;
+  border: 2px solid gray;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 /* No Color Grid Class*/
 .empty {
   height : 25px;
@@ -114,6 +132,14 @@ h1 {text-align: center}
 }
 .heart {
   background-image: url("heart.png");
+  background-size: contain;
+}
+.star {
+  background-image: url("http://pngimg.com/upload/small/star_PNG1583.png");
+  background-size: contain;
+}
+.circle {
+  background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Map-circle-black.svg/1024px-Map-circle-black.svg.png");
   background-size: contain;
 }
 

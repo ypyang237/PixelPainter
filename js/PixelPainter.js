@@ -56,6 +56,12 @@ promptMachine();
   document.getElementById('heart').addEventListener('click', function(){
      storecolor = 'heart';
   });
+  document.getElementById('star').addEventListener('click', function(){
+     storecolor = 'star';
+  });
+  document.getElementById('circle').addEventListener('click', function(){
+     storecolor = 'circle';
+  });
 
 
   document.getElementById('eraseBtn').addEventListener('click', function(){
