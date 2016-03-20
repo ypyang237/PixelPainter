@@ -1,5 +1,9 @@
 function pixelpainter() {
 
+  var colorArray = ['pink', 'blue', 'purple', 'green', 'red', 'yellow', 'brown', 'black', 'white'];
+
+  var classToRemove = null;
+
   var storecolor = null;
 
   document.getElementById('pink').addEventListener('click', function(){
@@ -35,37 +39,37 @@ function pixelpainter() {
 
   document.getElementById('clearBtn').addEventListener('click', clearAll);
 
-  var changer = document.querySelectorAll('td');
+  //Make OuterDiv Element
+  outerDiv = document.getElementById('gridDiv');
 
-  for(var i = 0; i < changer.length; i++) {
-    changer[i].addEventListener('click', changeColor);
-  }
+  //Create Little Divs
+    var units = 7000;
 
-  function changeColor(event) {
-    this.className = '';
-    this.className  = storecolor;
+  function  createLittleDivs() {
+    for(var i = 0; i < units; i++) {
+      var newDiv = document.createElement('div');
+      newDiv.className = 'empty white';
+      newDiv.addEventListener('click', function(event) {
+        for (var i = 0; i < colorArray.length; i++) {
+          if(this.classList.contains(colorArray[i])) {
+            this.classList.remove(colorArray[i]);
+            this.classList.add(storecolor);
+          }
+        }
+      });
+      outerDiv.appendChild(newDiv);
     }
+  }
+  createLittleDivs();
+
+
 
   function clearAll(event) {
     for(var i = 0; i < changer.length; i++) {
       changer[i].className = '';
     }
   }
-  //Make OuterDiv Element
-  outerDiv = document.getElementById('gridDiv')
 
-  //Create Little Divs
-    var units = 20;
-
-  function  createLittleDivs() {
-      for (var i = 0; i < units; i++) {
-    var newDiv = document.createElement('div');
-        newDiv.className = 'pink';
-        newDiv.addEventListener('click', changeColor);
-        outerDiv.appendChild(newDiv)
-    }
-  }
-return createLittleDivs();
 
 }
 
