@@ -43,7 +43,7 @@ function pixelpainter() {
   outerDiv = document.getElementById('gridDiv');
 
   //Create Little Divs
-    var units = 7000;
+    var units = document.getElementById('prompt').innerHTML;
 
   function  createLittleDivs() {
     for(var i = 0; i < units; i++) {
@@ -62,15 +62,25 @@ function pixelpainter() {
   }
   createLittleDivs();
 
-
+  divsToClear = document.querySelectorAll('.empty');
 
   function clearAll(event) {
-    for(var i = 0; i < changer.length; i++) {
-      changer[i].className = '';
+    for(var i = 0; i < divsToClear.length; i++) {
+      divsToClear[i].className = '';
+      divsToClear[i].className = 'empty white'
     }
   }
 
 
+}
+var unitsPrompt = prompt('How many units?');
+Number(unitsPrompt);
+
+if (unitsPrompt > 806) {
+  document.getElementById('prompt').innerHTML = 806;
+}
+else {
+  document.getElementById('prompt').innerHTML = unitsPrompt;
 }
 
 var pixelpainter = pixelpainter();
