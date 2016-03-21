@@ -102,22 +102,24 @@ promptMachine();
 
         allDivs[j].addEventListener('mouseover', function(event) {
           console.log('zero', allDivs[j]);
-        if (keepGoing) {
+          if (keepGoing === true) {
           console.log('WORKING');
-          for (var i = 0; i < colorArray.length; i++) {
-            if(event.target.classList.contains(colorArray[i])) {
-              event.target.classList.remove(colorArray[i]);
-              event.target.classList.add(storecolor);
+            for (var i = 0; i < colorArray.length; i++) {
+             if(event.target.classList.contains(colorArray[i])) {
+                event.target.classList.remove(colorArray[i]);
+                event.target.classList.add(storecolor);
+              }
             }
           }
-        }
-      });
+
+        });
+        /*allDivs[j].addEventListener('mouseup', function(event) {
+          keepGoing = false;
+        });*/
       }
 
 
-      allDiv.addEventListener('mouseup', function(event) {
-        keepGoing = false;
-      });
+
 
       });
 
