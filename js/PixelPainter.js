@@ -77,21 +77,52 @@ promptMachine();
 
 
   function  createLittleDivs() {
+    var keepGoing = false;
     for(var i = 0; i < units; i++) {
       var newDiv = document.createElement('div');
       newDiv.className = 'empty white';
-      newDiv.addEventListener('click', function(event) {
-        for (var i = 0; i < colorArray.length; i++) {
-          if(this.classList.contains(colorArray[i])) {
-            this.classList.remove(colorArray[i]);
-            this.classList.add(storecolor);
-          }
-        }
-      });
+
       outerDiv.appendChild(newDiv);
     }
   }
   createLittleDivs();
+
+
+  function addEventListener() {
+    keepGoing = true;
+    gridDiv.addEventListener('mousedown', function(event) {
+      for (var i = 0; i < colorArray.length; i++) {
+        if(event.target.classList.contains(colorArray[i])) {
+          event.target.classList.remove(colorArray[i]);
+          event.target.classList.add(storecolor);
+        }
+      }
+      var allDivs = document.querySelectorAll('.empty');
+      for (var j = 0; j < allDivs.length; j++) {
+
+        allDivs[j].addEventListener('mouseover', function(event) {
+          console.log('zero', allDivs[j]);
+        if (keepGoing) {
+          console.log('WORKING');
+          for (var i = 0; i < colorArray.length; i++) {
+            if(event.target.classList.contains(colorArray[i])) {
+              event.target.classList.remove(colorArray[i]);
+              event.target.classList.add(storecolor);
+            }
+          }
+        }
+      });
+      }
+
+
+      allDiv.addEventListener('mouseup', function(event) {
+        keepGoing = false;
+      });
+
+      });
+
+  }
+  addEventListener();
 
   divsToClear = document.querySelectorAll('.empty');
 
