@@ -53,6 +53,9 @@ promptMachine();
   document.getElementById('brown').addEventListener('click', function(){
      storecolor = 'brown';
   });
+  document.getElementById('black').addEventListener('click', function(){
+     storecolor = 'black';
+  });
   document.getElementById('heart').addEventListener('click', function(){
      storecolor = 'heart';
   });
@@ -77,7 +80,6 @@ promptMachine();
 
 
   function  createLittleDivs() {
-    var keepGoing = false;
     for(var i = 0; i < units; i++) {
       var newDiv = document.createElement('div');
       newDiv.className = 'empty white';
@@ -88,8 +90,10 @@ promptMachine();
   createLittleDivs();
 
 
+    var keepGoing = false;
   function addEventListener() {
-    keepGoing = true;
+    console.log('keepGoing1',keepGoing);
+
     gridDiv.addEventListener('mousedown', function(event) {
       for (var i = 0; i < colorArray.length; i++) {
         if(event.target.classList.contains(colorArray[i])) {
@@ -97,32 +101,34 @@ promptMachine();
           event.target.classList.add(storecolor);
         }
       }
-      var allDivs = document.querySelectorAll('.empty');
+      keepGoing = true;
+      console.log('keepGoing2',keepGoing);
+    });
+     
+
+    var allDivs = document.querySelectorAll('.empty');
+    console.log('hello');
+    if (keepGoing === true) {
+      console.log('heyyyaaa');  //NOPE
       for (var j = 0; j < allDivs.length; j++) {
 
         allDivs[j].addEventListener('mouseover', function(event) {
-          console.log('zero', allDivs[j]);
-          if (keepGoing === true) {
-          console.log('WORKING');
-            for (var i = 0; i < colorArray.length; i++) {
-             if(event.target.classList.contains(colorArray[i])) {
-                event.target.classList.remove(colorArray[i]);
-                event.target.classList.add(storecolor);
-              }
+        console.log('keepGoing3',keepGoing);
+          for (var i = 0; i < colorArray.length; i++) {
+           if(event.target.classList.contains(colorArray[i])) {
+              event.target.classList.remove(colorArray[i]);
+              event.target.classList.add(storecolor);
             }
-          }
-
+          } 
         });
-        /*allDivs[j].addEventListener('mouseup', function(event) {
-          keepGoing = false;
-        });*/
       }
-
-
-
-
-      });
-
+    }
+    else if (keepGoing === false) {
+      gridDiv.addEventListener('mouseup', function(event) {
+      keepGoing = false;
+      console.log('keepGoing4',keepGoing);
+    });
+    }
   }
   addEventListener();
 
