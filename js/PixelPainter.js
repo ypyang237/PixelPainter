@@ -83,8 +83,10 @@ promptMachine();
     for(var i = 0; i < units; i++) {
       var newDiv = document.createElement('div');
       newDiv.className = 'empty white';
-
       outerDiv.appendChild(newDiv);
+      // newDiv.addEventListener('mouseover', function(event) {
+      //   newDiv.style.background = 'red';
+      // });
     }
   }
   createLittleDivs();
@@ -100,37 +102,38 @@ promptMachine();
           event.target.classList.remove(colorArray[i]);
           event.target.classList.add(storecolor);
         }
-      }
+      } //END OF MOUSEDOWN ASSIGNCOLOR
       keepGoing = true;
       console.log('keepGoing2',keepGoing);
-    });
-     
+    }); //END OF MOUSEDOWN
+
 
     var allDivs = document.querySelectorAll('.empty');
     console.log('hello');
-    if (keepGoing === true) {
-      console.log('heyyyaaa');  //NOPE
-      for (var j = 0; j < allDivs.length; j++) {
 
-        allDivs[j].addEventListener('mouseover', function(event) {
-        console.log('keepGoing3',keepGoing);
-          for (var i = 0; i < colorArray.length; i++) {
-           if(event.target.classList.contains(colorArray[i])) {
-              event.target.classList.remove(colorArray[i]);
-              event.target.classList.add(storecolor);
-            }
-          } 
-        });
+
+
+    document.getElementById('gridDiv').addEventListener('mouseover', function(event) {
+      if(keepGoing === true) {
+      event.target.style.background = 'red';
       }
-    }
-    else if (keepGoing === false) {
+    });
+
+        document.getElementById('gridDiv').addEventListener('drag', function(event) {
+          keepGoing = false;
+    });
+
+    if(keepGoing === false) {
       gridDiv.addEventListener('mouseup', function(event) {
       keepGoing = false;
       console.log('keepGoing4',keepGoing);
-    });
-    }
-  }
+    });//END OF MOUSEUP
+    }//END OF ELSEIF
+
+  }//END OF ADDEVENTLISTENER FUNCTION
+
   addEventListener();
+
 
   divsToClear = document.querySelectorAll('.empty');
 
