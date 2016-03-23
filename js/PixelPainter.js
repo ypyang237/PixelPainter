@@ -111,11 +111,32 @@ promptMachine();
     var allDivs = document.querySelectorAll('.empty');
     console.log('hello');
 
+    // if (keepGoing === true) {
+    //   console.log('heyyyaaa');  //NOPE
+    //   for (var j = 0; j < allDivs.length; j++) {
+
+    //     allDivs[j].addEventListener('mouseover', function(event) {
+    //     console.log('keepGoing3',keepGoing);
+    //       for (var i = 0; i < colorArray.length; i++) {
+    //        if(event.target.classList.contains(colorArray[i])) {
+    //           event.target.classList.remove(colorArray[i]);
+    //           event.target.classList.add(storecolor);
+    //         }
+    //       }
+    //     });//END OF MOUSEOVER
+    //   }
+    // }//END OF IFSTATEMENT
 
 
     document.getElementById('gridDiv').addEventListener('mouseover', function(event) {
       if(keepGoing === true) {
-      event.target.style.background = 'red';
+      //event.target.style.background = 'red';
+      for (var i = 0; i < colorArray.length; i++) {
+           if(event.target.classList.contains(colorArray[i])) {
+              event.target.classList.remove(colorArray[i]);
+              event.target.classList.add(storecolor);
+            }
+          }
       }
     });
 
@@ -135,6 +156,10 @@ promptMachine();
   addEventListener();
 
 
+
+
+
+//IRRELEVANT
   divsToClear = document.querySelectorAll('.empty');
 
   function clearAll(event) {
