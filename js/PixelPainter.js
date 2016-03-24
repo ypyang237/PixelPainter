@@ -46,25 +46,33 @@ promptMachine();
     }
       paintColorContainer.addEventListener('click', function() {
         storecolor = event.target.value;
+        window.target= event.target;
+        if(event.target.nodeName === 'IMG') {
+          var imageParent = event.target.parentNode;
+          storecolor = imageParent.getAttribute('value');
+
+        }
+
+        console.log('here', event.target);
         console.log('storecolor', storecolor);
       });
   }
 
 createPaintColorButtons();
 
-  document.getElementById('heart').addEventListener('click', function(){
-     console.log('heart clicked');
-     storecolor = 'heart';
-     console.log('storecolor', storecolor);
-  });
+  // document.getElementById('heart').addEventListener('click', function(){
+  //    console.log('heart clicked');
+  //    storecolor = 'heart';
+  //    console.log('storecolor', storecolor);
+  // });
 
-  document.getElementById('star').addEventListener('click', function(){
-     storecolor = 'star';
-  });
+  // document.getElementById('star').addEventListener('click', function(){
+  //    storecolor = 'star';
+  // });
 
-  document.getElementById('circle').addEventListener('click', function(){
-     storecolor = 'circle';
-  });
+  // document.getElementById('circle').addEventListener('click', function(){
+  //    storecolor = 'circle';
+  // });
 
   document.getElementById('eraseBtn').addEventListener('click', function(){
      storecolor = 'white';
