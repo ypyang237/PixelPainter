@@ -8,7 +8,6 @@ h1 {
 
 }
 
-
 #pixelPainter {
   width: 800px;
   padding: 50px;
@@ -26,10 +25,12 @@ h1 {
   display: ;
   width: 500px;
   margin: 0 auto;
+  padding: 10px;
 }
 #extraBtns {
   width: 140px;
   margin: 0 auto;
+  font-size: 20px;
 }
 
 #gridContainer {
@@ -56,30 +57,6 @@ h1 {
 
 /* Color Paint Buttons */
 
-#pink {
-  background: #FF4DA2;
-}
-#blue {
-  background: #79D5FF;
-}
-#purple {
-  background: #B74EE8;
-}
-#green {
-  background: #5BFF94;
-}
-#red {
-  background: #e62e00;
-}
-#yellow {
-  background: #ffff00;
-}
-#brown {
-  background: #663300;
-}
-#black {
-  background: #000000;
-}
 #heart {
   height: 45px;
   width: 45px;
@@ -106,44 +83,20 @@ h1 {
   margin-bottom: 5px;
   display: inline-block;
 }
+
+
 /* No Color Grid Class*/
+
 .empty {
   height : 25px;
   width : 25px;
   border:  1px solid grey;
   display : inline-block;
-
 }
 
-/* Grid Class Colors */
 
-.pink {
-  background: #FF4DA2;
-}
-.blue {
-  background: #79D5FF;
-}
-.purple {
-  background: #B74EE8;
-}
-.green {
-  background: #5BFF94;
-}
-.white {
-  background: #FFFFFF;
-}
-.red {
-  background: #e62e00;
-}
-.yellow {
-  background: #ffff00;
-}
-.brown {
-  background: #663300;
-}
-.black {
-  background: #000000;
-}
+/* Grid Stickers */
+
 .heart {
   background-image: url("heart.png");
   background-size: contain;
