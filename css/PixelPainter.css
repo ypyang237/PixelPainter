@@ -4,8 +4,8 @@ body {
 }
 
 h1 {
-  text-align: center
-
+  text-align: center;
+  /*font-family: permanent marker;*/
 }
 
 #pixelPainter {
@@ -96,6 +96,7 @@ h1 {
 
 
 /* Grid Stickers */
+
 
 .heart {
   background-image: url("heart.png");

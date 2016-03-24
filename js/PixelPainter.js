@@ -29,27 +29,11 @@ promptMachine();
 
   var storecolor = null;
 
-  document.getElementById('heart').addEventListener('click', function(event){
-     storecolor = 'heart';
-  });
-  
-  document.getElementById('star').addEventListener('click', function(){
-     storecolor = 'star';
-  });
-  
-  document.getElementById('circle').addEventListener('click', function(){
-     storecolor = 'circle';
-  });
 
-  document.getElementById('eraseBtn').addEventListener('click', function(){
-     storecolor = 'white';
-  });
-
-  document.getElementById('clearBtn').addEventListener('click', clearAll);
 
 // Create Color Buttons
   var colors = ['#FF557C', '#E84DBE', '#EB61FF', '#AA4DE8', '#8D55FF', '#4447E8', '#5886FF', '#449DE8', '#4BDCFF', '#47E8B0', '#5BFF98', '#47E856', '#79FF4E', '#FFB944', '#FF8F50', '#E8611F', '#FF5044', '#E8271F', '#FF2274', '#FF1244'];
-  
+
   var paintColorContainer = document.getElementById('paintColors');
 
   function createPaintColorButtons() {
@@ -62,11 +46,31 @@ promptMachine();
     }
       paintColorContainer.addEventListener('click', function() {
         storecolor = event.target.value;
+        console.log('storecolor', storecolor);
       });
   }
 
 createPaintColorButtons();
 
+  document.getElementById('heart').addEventListener('click', function(){
+     console.log('heart clicked');
+     storecolor = 'heart';
+     console.log('storecolor', storecolor);
+  });
+
+  document.getElementById('star').addEventListener('click', function(){
+     storecolor = 'star';
+  });
+
+  document.getElementById('circle').addEventListener('click', function(){
+     storecolor = 'circle';
+  });
+
+  document.getElementById('eraseBtn').addEventListener('click', function(){
+     storecolor = 'white';
+  });
+
+  document.getElementById('clearBtn').addEventListener('click', clearAll);
 // Create Little Divs
 
   outerDiv = document.getElementById('gridDiv');
@@ -83,9 +87,8 @@ createPaintColorButtons();
 
 
 // Adds event listeners to the grid and the individual divs
-    
+
   var keepGoing = false;
-  
   function addEventListener() {
 
     outerDiv.addEventListener('mousedown', function(event) {
@@ -93,6 +96,7 @@ createPaintColorButtons();
       event.target.style.background = storecolor;
       }
       else {
+          console.log('what is storecolor', storecolor);
         event.target.style.background = null;
         event.target.classList.add(storecolor);
       }
@@ -107,6 +111,7 @@ createPaintColorButtons();
         else {
           event.target.style.background = null;
           event.target.classList.add(storecolor);
+
         }
       }
     }); //END OF MOUSEOVER
@@ -115,11 +120,11 @@ createPaintColorButtons();
       keepGoing = false;
     });  //END OF DRAG
 
-    if(keepGoing === false) {
+    // if(keepGoing === false) {
       outerDiv.addEventListener('mouseup', function(event) {
         keepGoing = false;
-      }); 
-    } //END OF MOUSEUP
+      });
+    // } //END OF MOUSEUP
   }  //End of addEventListener function
 
   addEventListener();
