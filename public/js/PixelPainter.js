@@ -1,35 +1,31 @@
 function pixelpainter() {
 
 // Prompt
-  var units = 0;
+  var units = 255;
 
-  function promptMachine() {
+//   function promptMachine() {
 
-  var unitsPrompt = prompt('Would you like a small or large canvas? Please enter small or large.');
-  unitsPrompt.toLowerCase();
+//   var unitsPrompt = prompt('Would you like a small or large canvas? Please enter small or large.');
+//   unitsPrompt.toLowerCase();
 
-  if (unitsPrompt === 'small') {
-    document.getElementById('gridDiv').className = 'gridDivSmall';
-    units = 256;
-  }
-  else if (unitsPrompt === 'large') {
-   document.getElementById('gridDiv').className = 'gridDivLarge';
-   units = 806;
-  }
-  else {
-    units = 812;
-  }
-}
+//   if (unitsPrompt === 'small') {
+//     document.getElementById('gridDiv').className = 'gridDivSmall';
+//     units = 256;
+//   }
+//   else if (unitsPrompt === 'large') {
+//    document.getElementById('gridDiv').className = 'gridDivLarge';
+//    units = 806;
+//   }
+//   else {
+//     units = 812;
+//   }
+// }
 
-promptMachine();
+// promptMachine();
 
 //pixelPainterRuns
 
-  // var colorArray = ['heart', 'pink', 'blue', 'purple', 'green', 'red', 'yellow', 'brown', 'black', 'white'];
-
   var storecolor = null;
-
-
 
 // Create Color Buttons
   var colors = ['#FF557C', '#E84DBE', '#EB61FF', '#AA4DE8', '#8D55FF', '#4447E8', '#5886FF', '#449DE8', '#4BDCFF', '#47E8B0', '#5BFF98', '#47E856', '#79FF4E', '#FFB944', '#FF8F50', '#E8611F', '#FF5044', '#E8271F', '#FF2274', '#FF1244'];
@@ -60,20 +56,6 @@ promptMachine();
 
 createPaintColorButtons();
 
-  // document.getElementById('heart').addEventListener('click', function(){
-  //    console.log('heart clicked');
-  //    storecolor = 'heart';
-  //    console.log('storecolor', storecolor);
-  // });
-
-  // document.getElementById('star').addEventListener('click', function(){
-  //    storecolor = 'star';
-  // });
-
-  // document.getElementById('circle').addEventListener('click', function(){
-  //    storecolor = 'circle';
-  // });
-
   document.getElementById('eraseBtn').addEventListener('click', function(){
      storecolor = 'white';
   });
@@ -84,9 +66,10 @@ createPaintColorButtons();
   outerDiv = document.getElementById('gridDiv');
 
   function  createLittleDivs() {
-    for(var i = 0; i < units; i++) {
+    for(var i = 1; i < units; i++) {
       var newDiv = document.createElement('div');
       newDiv.className = 'empty';
+      newDiv.setAttribute("id", i);
       outerDiv.appendChild(newDiv);
     }
   }
@@ -104,7 +87,6 @@ createPaintColorButtons();
       event.target.style.background = storecolor;
       }
       else {
-          console.log('what is storecolor', storecolor);
         event.target.style.background = null;
         event.target.classList.add(storecolor);
       }

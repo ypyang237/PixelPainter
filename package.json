@@ -1,0 +1,24 @@
+{
+  "name": "pixelpainter",
+  "version": "1.0.0",
+  "description": "PixelPainter ============",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ypyang237/PixelPainter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ypyang237/PixelPainter/issues"
+  },
+  "homepage": "https://github.com/ypyang237/PixelPainter#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
+  }
+}

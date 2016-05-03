@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link href="css/PixelPainter.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+  </head>
+  <body>
+    <h1>Pixel Painter</h1>
+    <div id="pixelPainter">
+    <p id="prompt"></p>
+
+      <div id = 'paintColors'>
+      <div id="stickers">
+
+        <div id="heart" value="heart" type="image"><img src="../css/heart.png" height="45px" width="45px"></div>
+
+        <div id="star" value="star" type="image"><img src="http://pngimg.com/upload/small/star_PNG1583.png" height="45px" width="45px"></div>
+
+        <div id="circle" value="circle" type="image"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c5/Map-circle-black.svg/1024px-Map-circle-black.svg.png" height="45px" width="45px"></div>
+
+      </div>
+
+      </div>
+    <div id="extraBtns">
+      <button id ="eraseBtn">ERASE</button>
+      <button id="clearBtn">CLEAR</button>
+      <button id="saveBtn">SAVE</button>
+      <button id="loadBtn">LOAD</button>
+
+    </div>
+    <div id="gridContainer">
+      <div id="gridDiv">
+      </div>
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/PixelPainter.js"></script>
+    <script src="js/save-image.js"></script>
+    <script src="js/load-image.js"></script>
+  </body>
+</html>
