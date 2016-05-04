@@ -18,7 +18,7 @@ var paintSchema = mongoose.Schema({
   imageInstructions: String
 });
 
-var Hawaii = mongoose.model('Hawaii', paintSchema);
+var Image = mongoose.model('Image', paintSchema);
 
 
 var currImage;
@@ -37,7 +37,7 @@ app.post('/image', function(req, res) {
   res.send('successPost');
 
   //saving to database
-    var image = new Hawaii({
+    var image = new Image({
       imageState: req.body.imageInstructions
     });
 
