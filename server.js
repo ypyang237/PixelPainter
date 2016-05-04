@@ -15,7 +15,8 @@ db.once('open', function() {
 });
 
 var paintSchema = mongoose.Schema({
-  imageInstructions: String
+  name: String,
+  imageState: String
 });
 
 var Image = mongoose.model('Image', paintSchema);
@@ -34,20 +35,24 @@ app
 
 app.post('/image', function(req, res) {
   currImage = req.body;
-  res.send('successPost');
 
+
+  console.log('req.body.imageState', req.body.imageState);
+  console.log('req.body.name', req.body.name);
   //saving to database
     var image = new Image({
-      imageState: req.body.imageInstructions
+      name: req.body.name,
+      imageState: req.body.imageState
     });
 
-    image.save(function(err, image) {
+    image.save(function(err, data) {
       if(err) {
-        return console.error(err);
+        res.send(err); //err is from the database
       }
-
-
-    })
+      else {
+        res.send(data); //data is fromthe database
+      }
+    });
   });
 
 app.get('/image', function(req, res) {
